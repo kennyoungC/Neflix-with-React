@@ -21,8 +21,14 @@ body {
   left: -100px !important;
   background-color: black !important;
 }
+.navbar-light .navbar-toggler {
+  background-color: beige;
+}
 .dropdown-menu a {
   color: #fff;
+}
+.dropdown-toggle {
+  background-color: transparent;
 }
 .icon {
   font-size: 32px;
