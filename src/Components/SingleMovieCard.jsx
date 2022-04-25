@@ -1,11 +1,12 @@
-const SingleMovieCard = () => {
+const SingleMovieCard = (props) => {
   return (
-    <div style={{ width: "320px" }}>
+    <div>
       <div className="strive-card position-relative">
         <img
-          className="img-fluid w-100 rounded"
-          src="https://via.placeholder.com/150"
+          className="w-100 rounded"
+          src={props.img}
           alt=""
+          style={{ width: "230px", height: "170px", objectFit: "cover" }}
         />
 
         <div className="infos-container">
@@ -13,13 +14,17 @@ const SingleMovieCard = () => {
             <div className="d-flex align-items-center justify-content-between mb-3">
               <div className="play-btn gradient"></div>
               <h6 className="season mb-0 ml-2">Play S1 E1</h6>
-              <span className="arr-down">
+              <span
+                className="arr-down"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
                 <i className="bi bi-chevron-down"></i>
               </span>
               {/* <div class="plus-btn ml-auto"></div> */}
             </div>
             <p className="prime-title">Included with Prime</p>
-            <h6>Nine Perfect Strangers - Season 1</h6>
+            <h6>{props.title}</h6>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
               beatae veritatis, ut sequi dolores debitis illum, odit officiis
@@ -27,9 +32,9 @@ const SingleMovieCard = () => {
               reprehenderit ratione delectus error ipsam.
             </p>
             <div className="movie-footer">
-              <span>2021</span>
-              <i className="bi bi-chat-left-text"></i>
-              <i className="bi bi-badge-4k"></i>
+              <span>Year: {props.year}</span>
+              {/* <i className="bi bi-chat-left-text"></i>
+              <i className="bi bi-badge-4k"></i> */}
             </div>
           </div>
         </div>
