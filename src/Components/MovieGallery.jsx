@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Container } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import SingleMovieCard from "./SingleMovieCard"
 
 class MovieGallery extends Component {
@@ -10,19 +10,32 @@ class MovieGallery extends Component {
     this.getMovieDetails()
   }
   getMovieDetails = async () => {
-    const response = await fetch(
-      "http://www.omdbapi.com/?apikey=a092ad98&s=harry potter"
-    )
-    const { Search } = await response.json()
-    this.setState(() => {
-      movie: Search
-    })
-    // console.log(Search)
+    try {
+      const response = await fetch(
+        "http://www.omdbapi.com/?apikey=a092ad98&s=" + this.props.movieTitle
+      )
+      if (response.ok) {
+        const { Search } = await response.json()
+        this.setState({
+          movie: Search,
+        })
+        console.log(Search)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
   render() {
     return (
       <Container fluid>
-        <SingleMovieCard />
+        <h3 className="text-capitalize mb-3">{this.props.movieTitle}</h3>
+        <Row>
+          {this.state.movie.map((m) => (
+            <Col md={3} className="mb-2" key={m.imdbID}>
+              <SingleMovieCard img={m.Poster} title={m.Title} year={m.Year} />
+            </Col>
+          ))}
+        </Row>
       </Container>
     )
   }
