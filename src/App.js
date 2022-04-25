@@ -3,15 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import MyNavbar from "./Components/MyNavbar"
 import SubNavbar from "./Components/SubNavbar"
-import MovieGallery from "./Components/MovieGallery"
+import Galleries from "./Components/Galleries"
+import MyFooter from "./Components/MyFooter"
 
 function App() {
   return (
-    <header>
-      <MyNavbar />
-      <SubNavbar />
-      <MovieGallery />
-    </header>
+    <>
+      <header>
+        <MyNavbar />
+        <SubNavbar />
+      </header>
+      <main>
+        <Galleries />
+      </main>
+      <MyFooter />
+    </>
   )
 }
 
