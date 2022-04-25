@@ -11,7 +11,7 @@ import {
 class MyNavbar extends Component {
   render() {
     return (
-      <Navbar expand="lg" className="nav-bar">
+      <Navbar expand="lg" className="nav-bar ">
         <Container fluid>
           <Navbar.Brand href="#">
             <img
@@ -42,10 +42,10 @@ class MyNavbar extends Component {
             </Nav>
             <div className="d-flex align-items-center gap-3">
               <span>
-                <i class="bi bi-search"></i>
+                <i className="bi bi-search"></i>
               </span>
-              <p class="my-0 ml-3 text-white">KIDS</p>
-              <i class="bi bi-bell"></i>
+              <p className="my-0 ml-3 text-white">KIDS</p>
+              <i className="bi bi-bell"></i>
               <Dropdown>
                 <Dropdown.Toggle id="dropdown-basic" variant="dark">
                   <img
@@ -55,7 +55,7 @@ class MyNavbar extends Component {
                   />
                 </Dropdown.Toggle>
 
-                <Dropdown.Menu>
+                <Dropdown.Menu className="drop-down-menu " bg="dark">
                   <Dropdown.Item href="#/action-1">heritage</Dropdown.Item>
                   <Dropdown.Item href="#/action-2">kenneth</Dropdown.Item>
                   <Dropdown.Item href="#/action-3">favour</Dropdown.Item>
