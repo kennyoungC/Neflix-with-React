@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const SingleMovieCard = (props) => {
   return (
     <div>
@@ -14,13 +16,17 @@ const SingleMovieCard = (props) => {
             <div className="d-flex align-items-center justify-content-between mb-3">
               <div className="play-btn gradient"></div>
               <h6 className="season mb-0 ml-2">Play S1 E1</h6>
-              <span
-                className="arr-down"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                <i className="bi bi-chevron-down"></i>
-              </span>
+              <Link to={"/details/" + props.id}>
+                <span
+                  className="arr-down text-light position-relative"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                  {" "}
+                  <i className="bi bi-chevron-down"></i>
+                  <p className="position-absolute veiw-info">View Info</p>
+                </span>
+              </Link>
               {/* <div class="plus-btn ml-auto"></div> */}
             </div>
             <p className="prime-title">Included with Prime</p>
