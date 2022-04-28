@@ -40,6 +40,18 @@ footer {
   transform: scale(1);
   transition: transform 0.3s ease-out;
 }
+.veiw-info {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%) !important;
+  white-space: nowrap;
+  z-index: 9999;
+  opacity: 0 !important;
+  transition: 0.3s all;
+}
+.arr-down:hover .veiw-info {
+  opacity: 1 !important;
+}
 
 .infos-container {
   color: white;
