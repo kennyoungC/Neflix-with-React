@@ -2,9 +2,10 @@ import MovieGallery from "./MovieGallery"
 
 const Galleries = () => (
   <>
-    <MovieGallery movieTitle="harry potter" />
+    <MovieGallery movieTitle="superman" />
     <MovieGallery movieTitle="game of thrones" />
-    <MovieGallery movieTitle="merlin" />
+    <MovieGallery movieTitle="avengers" />
   </>
 )
+
 export default Galleries
